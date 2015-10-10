@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class LinksBase {
     private static LinksBase INSTANCE;
-    private volatile Set<String> links = new HashSet<String>();
+    private Set<String> links = new HashSet<String>();
 
     private LinksBase() {
 
@@ -21,7 +21,7 @@ public class LinksBase {
         return INSTANCE;
     }
 
-    public void add(String str){
+    public synchronized void add(String str){
         this.links.add(str);
     }
 
